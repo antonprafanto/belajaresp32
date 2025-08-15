@@ -1,4 +1,4 @@
-# 🖐️ Unit 2: ESP32 Touch Sensor
+# 🖐️ Module 2 Unit 2: ESP32 Touch Sensor
 ## *Sentuh untuk Mengontrol - Teknologi Capacitive Touch di Ujung Jari Anda*
 
 ---
