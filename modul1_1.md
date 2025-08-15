@@ -1,4 +1,4 @@
-# 🚀 Module 1: Getting Started with ESP32
+# 🚀 Module 1 Unit 1: Getting Started with ESP32
 ## *Membangun Fondasi Kuat untuk Perjalanan IoT Developer*
 
 ---
