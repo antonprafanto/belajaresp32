@@ -516,7 +516,7 @@ Documents/
 
 ---
 
-**🤔 Ada pertanyaan?** Silakan tanya di https://t.me/arduino_id atau lanjut ke Unit 3!
+**🤔 Ada pertanyaan?** Silakan tanya di https://t.me/kodingindonesia atau lanjut ke Unit 3!
 
 **⭐ Berhasil install?** Selamat! Kamu sudah siap mulai programming ESP32. Lanjut ke module berikutnya untuk explore GPIO pins!
 
