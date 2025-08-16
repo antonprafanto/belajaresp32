@@ -350,7 +350,7 @@ Jangan terburu-buru. Pastikan benar-benar paham satu konsep sebelum lanjut ke ya
 Jangan hanya baca teori. Langsung coba semua example code dan modifikasi sesuai kreativitasmu.
 
 **Join Community**
-Bergabung dengan forum atau grup Facebook untuk berdiskusi dan sharing pengalaman.
+Bergabung dengan [Telegram Koding Indonesia](https://t.me/kodingindonesia) untuk berdiskusi dan sharing pengalaman dengan sesama learners ESP32.
 
 ### Untuk yang Sudah Berpengalaman
 **Focus on Integration**
