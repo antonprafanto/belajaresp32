@@ -302,7 +302,6 @@ void setup() {
   // Initialization code - runs once
   Serial.begin(115200);        // Serial communication
   pinMode(2, OUTPUT);          // Configure GPIO
-  WiFi.begin("SSID", "password"); // Wi-Fi connection
 }
 
 void loop() {
