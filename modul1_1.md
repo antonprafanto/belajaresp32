@@ -362,50 +362,57 @@ void loop() {
 4. **Test dengan blink example** untuk verification
 5. **Setup serial monitor** untuk debugging
 
-### **🔧 Langkah 3: First Project - Smart LED**
+### **🔧 Langkah 3: First Project - LED Blink Sederhana**
 
-Mari buat project pertama yang demonstrates ESP32 capabilities:
+Mari buat project pertama yang sangat sederhana namun membuktikan ESP32 berfungsi dengan baik:
 
 ```cpp
 /*
-  ESP32 Smart LED Controller
-  Features: Touch sensor, Wi-Fi status, breathing effect
+  ESP32 LED Blink - Project Pertama
+  Program sederhana untuk mengedipkan LED built-in ESP32
+  Cocok untuk pemula yang baru belajar ESP32
 */
 
-#include <WiFi.h>
-
-const int ledPin = 2;          // Built-in LED
-const int touchPin = 4;        // Touch sensor pin
-int brightness = 0;            // LED brightness
-int fadeDirection = 5;         // Fade direction
+// Pin 2 adalah lokasi LED built-in pada ESP32 DEVKIT DOIT
+const int ledPin = 2;
 
 void setup() {
+  // Memulai komunikasi serial untuk debugging
   Serial.begin(115200);
+  
+  // Mengatur pin LED sebagai output
   pinMode(ledPin, OUTPUT);
   
-  // Configure touch threshold
-  touchAttachInterrupt(touchPin, touchDetected, 40);
-  
-  Serial.println("ESP32 Smart LED Ready!");
+  // Pesan konfirmasi bahwa program sudah dimulai
+  Serial.println("ESP32 siap! LED akan berkedip setiap detik.");
 }
 
 void loop() {
-  // Breathing LED effect
-  analogWrite(ledPin, brightness);
-  brightness += fadeDirection;
+  // Menyalakan LED
+  digitalWrite(ledPin, HIGH);
+  Serial.println("LED ON");
+  delay(1000);  // Tunggu 1 detik
   
-  if (brightness <= 0 || brightness >= 255) {
-    fadeDirection = -fadeDirection;
-  }
-  
-  delay(30);
-}
-
-void touchDetected() {
-  Serial.println("Touch detected! LED mode changed.");
-  // Toggle between breathing and solid modes
+  // Mematikan LED
+  digitalWrite(ledPin, LOW);
+  Serial.println("LED OFF");
+  delay(1000);  // Tunggu 1 detik
 }
 ```
+
+**🎯 Mengapa Contoh Ini Lebih Baik untuk Pemula:**
+
+Contoh LED blink ini sangat ideal untuk pemula karena mengajarkan konsep fundamental tanpa kompleksitas yang tidak perlu. Program ini mendemonstrasikan empat aspek penting dari programming ESP32. Pertama, konfigurasi pin GPIO dimana kita belajar bagaimana mengatur pin sebagai input atau output menggunakan fungsi pinMode. Kedua, komunikasi serial yang memungkinkan kita melihat output program melalui Serial Monitor untuk debugging. Ketiga, kontrol digital output dengan digitalWrite untuk menyalakan dan mematikan LED. Keempat, timing control menggunakan delay untuk mengatur interval waktu.
+
+**🔍 Penjelasan Detail Setiap Bagian:**
+
+Bagian pertama adalah deklarasi konstanta dimana kita mendefinisikan pin 2 sebagai lokasi LED built-in. Penggunaan const int memastikan nilai tidak berubah selama program berjalan. Di fungsi setup, kita menginisialisasi komunikasi serial dengan baud rate 115200 yang adalah standar untuk ESP32. Fungsi pinMode mengkonfigurasi pin 2 sebagai OUTPUT karena kita akan mengirim sinyal ke LED. Pesan serial memberikan konfirmasi bahwa program sudah dimulai dengan benar.
+
+Di fungsi loop yang berjalan berulang terus menerus, kita menggunakan digitalWrite dengan parameter HIGH untuk memberikan voltase 3.3V ke pin LED sehingga LED menyala. Delay 1000 millisecond membuat LED tetap menyala selama satu detik. Kemudian digitalWrite dengan parameter LOW membuat pin menjadi 0V sehingga LED mati, diikuti delay lagi untuk menjaga LED tetap mati selama satu detik.
+
+**✅ Cara Test Program Ini:**
+
+Setelah upload program ke ESP32, Anda akan melihat LED biru kecil di board berkedip setiap detik. Buka Serial Monitor di Arduino IDE dengan baud rate 115200 untuk melihat pesan "LED ON" dan "LED OFF" yang bergantian. Jika LED berkedip dan Serial Monitor menampilkan pesan dengan benar, maka setup ESP32 Anda sudah perfect dan siap untuk project yang lebih advanced.
 
 ---
 
